@@ -57,7 +57,7 @@ public class PdfCreator {
         document.finishPage(page);
 
         String pdfName = mItem.getCustomer() + " " + mItem.getMachineType() + " " + mItem.getBadPhenom2() + "不良解析报告" + getTime() + ".pdf";
-        String path = mActivity.getApplicationContext().getExternalFilesDir(null) + "/" + pdfName;
+        String path = mActivity.getApplicationContext().getExternalFilesDir(null) + "/" + getTime() + "/" + pdfName;
 //        String path = mActivity.getApplicationContext().getExternalFilesDir(null) + "/table1.pdf";
         Log.i("cc", "path = " + path);
         System.out.println(path);

@@ -132,10 +132,12 @@ public class Fragment_Upload extends MainFragment implements View.OnClickListene
                     boolean uploadResult = false;
                     setUploadButEnable(false);
                     showShowToast("正在进行文件上传");
-                    for (int i = 0; i < tempList.length; i++) {
-                        if (tempList[i].isFile()) {
-                            // 上传文件
-                            uploadResult = ftpClient.ftpUpload(tempList[i].getAbsolutePath(), tempList[i].getName(), "");
+                    if (tempList != null) {
+                        for (int i = 0; i < tempList.length; i++) {
+                            if (tempList[i].isFile()) {
+                                // 上传文件
+                                uploadResult = ftpClient.ftpUpload(tempList[i].getAbsolutePath(), tempList[i].getName(), "");
+                            }
                         }
                     }
 
